@@ -1,4 +1,5 @@
 var webdriver = require('selenium-webdriver');
+var port = process.env.PORT || 8080;
 var alarm_username = 'DALLEWE70';
 var alarm_password = 'LavaMarker1012';
 var lockHour = 23;
@@ -8,12 +9,12 @@ var beenUnlockedToday = false;
 
 var date = new Date();
 var current_hour = date.getHours(); 
-console.log('Checking current hour for lock status checks. Current hour is ' + current_hour  + ' Will automatically lock at ' + lockHour + ' and unlock at ' + unlockHour);
+console.log('Checking current hour for lock status checks. Current hour is ' + current_hour  + ' Will automatically lock at ' + lockHour + ' and unlock at ' + unlockHour + ' listening on port ' + port);
 	
 http = require('http');
 fs = require('fs');
 
-var port = process.env.PORT || 8080;
+
 
 function monitorLoop() {
 	
@@ -121,7 +122,7 @@ function toggleDoor(username,password,lock)
 	{
 
 		var driver = new webdriver.Builder().
-	    withCapabilities(webdriver.Capabilities.firefox()).
+	    withCapabilities(webdriver.Capabilities.chrome()).
 	    build();
    
 		driver.get('https://www.alarm.com/login?m=no_session&ReturnUrl=/web/Automation/Locks.aspx');
@@ -157,8 +158,7 @@ function toggleDoor(username,password,lock)
 	{
 		lockResult.success = false;
 		lockResult.message = exception.message;
-		driver.quit();
-
+		
 		return lockResult	
 	}
 
