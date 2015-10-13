@@ -45,12 +45,14 @@ function monitorLoop() {
 server = http.createServer( function(request, response) {
 
     console.dir('Request received');
-	
-    if (request.method == 'POST') {
-		var responseObject = new Object();
-		responseObject.message = 'Waiting';
-		responseObject.status = 'OK';
+
+	var responseObject = new Object();
+	responseObject.message = 'Waiting';
+	responseObject.status = 'OK';
 		
+		
+    if (request.method == 'POST') {
+
 		console.log("POST");
         
         request.on('data', function (data) 
@@ -101,7 +103,7 @@ server = http.createServer( function(request, response) {
     }
 	else
 	{
-		response.write("Please use post request.");
+		responseObject.message = 'Please use post request';
 		response.writeHeader(200, {"Content-Type": "text/plain"});
 		response.write(JSON.stringify(responseObject));
 		response.end();		
