@@ -1,0 +1,21 @@
+{
+  "name": "AutoLock",
+  "version": "1.0.0",
+  "description": "Automates security system",
+  "main": "core.js",
+  "dependencies": {
+    "g": "^2.0.0",
+    "http-server": "^0.8.5",
+    "selenium-chromedriver": "^0.0.2",
+    "selenium-webdriver": "^2.47.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "engines": {
+    "node": "4.1.1"
+  }, 
+  "author": "Dan Llewellyn",
+  "license": "ISC"
+}
