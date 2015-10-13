@@ -13,6 +13,7 @@ console.log('Checking current hour for lock status checks. Current hour is ' + c
 http = require('http');
 fs = require('fs');
 
+var port = process.env.PORT || 8080;
 
 function monitorLoop() {
 	
@@ -110,7 +111,7 @@ server = http.createServer( function(request, response) {
 	}
 	
 
-}).listen(5000);
+}).listen(port);
 
 function toggleDoor(username,password,lock)
 {
