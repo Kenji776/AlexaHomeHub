@@ -1,10 +1,9 @@
 # AlexaHomeHub
 NodeJs server for Alexa IFTTT interactions
 
-Home web server for accepting POST requests to perform automatic actions. Originally developed to accept requests from the
-Alexa platform via If This Then That, however it will work with anything that can send POST requests with JSON payloads.
+What the hell is this?: Alexa is a speech recognition and automation platform from Amazon. The echo device uses Alexa to allow people to have a device in their home they can talk to to perform actions, such as playing music, update shopping lists, get news, weather, sports, etc. Alexa also supports create 'custom' actions through the If This Then That service. Basically letting you create rules that say 'When alexa hears this phrase, perform this action'. By combining the Alexa Channel, and the Maker channel which allows you to send web requests to a server with data I've created a home web server which can allow Alexa to perform actions it could not nativly. My software contains several samples such as logging in an interacting with alarm.com security systems, printing files on a local printer, and ordering pizza from Sarpinos. Basically it's a web server for accepting POST requests to perform automatic actions.
 
-To run first you'll need to create a key.txt file which contains a private encryption key. This key will be used to encrypt and 
+To run first you'll need to create a key.txt file which contains a private encryption key, because I've decided that the server will only deal with encrypted requests to ensure that sensative information is never exposed on IFTTT, since it's a public service. This key will be used to encrypt and 
 decrypt the data payloads so you'll be safe sending sensative information to the server from IFTTT. Then you'll need to setup port
 forwarding in your router to send incoming requests to the computer the server is running on, on the port you can configured.
 
