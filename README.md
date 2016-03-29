@@ -35,6 +35,10 @@ by fed to the proper function. Like so
 
 When the server receivs that request it will see the action matches a function name. It will decrypt the data in the data attribute and parse it
 to a JSON object. That data will then be handed to the function which will then do whatever it needs. I realize this process is a bit cumbersom and I will
-be implimenting an interface to make it easier in the near future. For now this more of a developer resource than a finished product. 
+be implimenting an interface to make it easier in the near future. For now this more of a developer resource than a finished product.
+
+Then once you have your encryped request, you can head over to IFTTT and create a new recipie. You'll use the Alexa channel to trigger when a phrase is said. Just create any phrase you like. Then make the action be a 'Maker' channel web request. Make sure to set it as a post request, and point it at where your server lives. For the data paste in your encrypted JSON payload. Then once you save it you should be good to go.
+
+Oh, one side note. If you are trying to make the automatic pizza ordering work, you'll need your favorite order ID. Log into the sarpinos website. Create an order, and save it as a favorite. Log out, log back in. When it asks if you you want to order a saved favorite, right click on the button for your order and inspect element. In that button will be an orderId attribtue. That's what you'll need to pass into the function as the orderId attribute.
 
 For more info about this project, check my blog: https://iwritecrappycode.wordpress.com/2016/03/23/making-alexa-order-me-a-pizza/
