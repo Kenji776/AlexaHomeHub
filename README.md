@@ -37,3 +37,5 @@ by fed to the proper function. Like so
 When the server receivs that request it will see the action matches a function name. It will decrypt the data in the data attribute and parse it
 to a JSON object. That data will then be handed to the function which will then do whatever it needs. I realize this process is a bit cumbersom and I will
 be implimenting an interface to make it easier in the near future. For now this more of a developer resource than a finished product. 
+
+For more info about this project, check my blog: https://iwritecrappycode.wordpress.com/2016/03/23/making-alexa-order-me-a-pizza/
